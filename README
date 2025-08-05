@@ -1,3 +1,21 @@
+COE428 Lab 5: XML-based Heap and Stack Operations
+
+This lab was completed over a two-week period and focused on two key objectives: validating XML formatting using a custom stack implementation, and building a heap-based tree structure from integer inputs, then representing it in XML format. The lab was split into two main parts, each designed to reinforce knowledge of stacks, heaps, and tree data structures in C.
+
+Part 1: XML Validation Using Stack
+
+I implemented a program that verified whether a simplified XML string was well-formed. The program read input character-by-character from standard input, detecting and identifying start-tags and end-tags. A custom string-based stack was used to track open tags and ensure proper nesting and order of tags.
+
+The stack implementation included functions for pushing and popping tag names, as well as checking for an empty state. The XML validation logic was implemented in a separate part1Main.c file, while the stack functions were defined in stringStack.c. The algorithm ensured that every end-tag correctly matched the most recent unmatched start-tag, and that no tags remained unclosed by the end of the input.
+
+Part 2: Integer Heap and XML Tree Generation
+
+In the second part of the lab, I implemented a min-heap to organize integer inputs from standard input. After building the heap, the program printed its tree structure in a simplified XML format. Each heap node was represented as a <node id="value"> tag, capturing the hierarchical nature of the heap.
+
+Once the XML representation was generated, the program removed all values from the heap in descending order and printed them. Each removed value was also pushed onto a stack. Finally, the values were printed in reverse order (ascending), using the stack.
+
+The heap and stack were implemented in intHeap.c and intStack.c respectively, while the main logic and input handling were managed in part2Main.c.
+
 Question:
 Another legal XML tag not used in this lab is the "stand-alone" tag. This kind of tag combines both a start-tag and end-tag in one. It is identified with a '/'(slash) preceding the final >. (For example, the <foo/> is a stand-alone tag that is "self balancing". Describe briefly how you would modify Requirement 1 to allow this kind of tag. 
 
